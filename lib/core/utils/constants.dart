@@ -172,38 +172,32 @@ class AppAssets {
   static const String couponIcon = 'assets/icons/coupon.svg';
 }
 
-enum UserRole {
-  user,
-  merchant,
-  admin,
-}
 
 enum TransactionStatus {
   pending,
-  verified,
-  cancelled,
+  terverifikasi,
+  dibatalkan,
 }
 
 enum RedemptionStatus {
   pending,
-  completed,
-  cancelled,
+  selesai,
+  dibatalkan,
 }
 
 enum MissionStatus {
-  active,
-  completed,
-  failed,
-  expired,
+  aktif,
+  selesai,
+  gagal,
 }
 
 enum CouponType {
-  percentage,
-  fixed,
+  persentase,
+  tetap,
 }
 
 enum RewardType {
   voucher,
-  item,
-  credit,
+  barang,
+  kredit,
 }

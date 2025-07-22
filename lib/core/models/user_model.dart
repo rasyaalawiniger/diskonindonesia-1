@@ -1,4 +1,3 @@
-import '../utils/constants.dart';
 
 class UserModel {
   final String userId;
@@ -8,7 +7,6 @@ class UserModel {
   final String referralCode;
   final int pointsBalance;
   final double walletBalance;
-  final UserRole role;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -20,7 +18,6 @@ class UserModel {
     required this.referralCode,
     required this.pointsBalance,
     required this.walletBalance,
-    required this.role,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -29,15 +26,11 @@ class UserModel {
     return UserModel(
       userId: json['user_id'] as String,
       email: json['email'] as String,
-      name: json['name'] as String,
-      phone: json['phone'] as String?,
-      referralCode: json['referral_code'] as String,
-      pointsBalance: json['points_balance'] as int,
-      walletBalance: (json['wallet_balance'] as num).toDouble(),
-      role: UserRole.values.firstWhere(
-        (e) => e.name == json['role'],
-        orElse: () => UserRole.user,
-      ),
+      name: json['nama'] as String,
+      phone: json['telepon'] as String?,
+      referralCode: json['kode_referral'] as String,
+      pointsBalance: json['saldo_poin'] as int,
+      walletBalance: (json['saldo_dompet'] as num).toDouble(),
       createdAt: DateTime.parse(json['created_at'] as String),
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );
@@ -47,12 +40,11 @@ class UserModel {
     return {
       'user_id': userId,
       'email': email,
-      'name': name,
-      'phone': phone,
-      'referral_code': referralCode,
-      'points_balance': pointsBalance,
-      'wallet_balance': walletBalance,
-      'role': role.name,
+      'nama': name,
+      'telepon': phone,
+      'kode_referral': referralCode,
+      'saldo_poin': pointsBalance,
+      'saldo_dompet': walletBalance,
       'created_at': createdAt.toIso8601String(),
       'updated_at': updatedAt.toIso8601String(),
     };
@@ -66,7 +58,6 @@ class UserModel {
     String? referralCode,
     int? pointsBalance,
     double? walletBalance,
-    UserRole? role,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
@@ -78,7 +69,6 @@ class UserModel {
       referralCode: referralCode ?? this.referralCode,
       pointsBalance: pointsBalance ?? this.pointsBalance,
       walletBalance: walletBalance ?? this.walletBalance,
-      role: role ?? this.role,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -95,7 +85,6 @@ class UserModel {
         other.referralCode == referralCode &&
         other.pointsBalance == pointsBalance &&
         other.walletBalance == walletBalance &&
-        other.role == role &&
         other.createdAt == createdAt &&
         other.updatedAt == updatedAt;
   }
@@ -110,7 +99,6 @@ class UserModel {
       referralCode,
       pointsBalance,
       walletBalance,
-      role,
       createdAt,
       updatedAt,
     );
@@ -118,6 +106,6 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(userId: $userId, email: $email, name: $name, phone: $phone, referralCode: $referralCode, pointsBalance: $pointsBalance, walletBalance: $walletBalance, role: $role, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'UserModel(userId: $userId, email: $email, name: $name, phone: $phone, referralCode: $referralCode, pointsBalance: $pointsBalance, walletBalance: $walletBalance, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }

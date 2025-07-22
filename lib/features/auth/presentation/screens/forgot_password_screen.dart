@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/utils/constants.dart';
-import '../../../../core/services/auth_service.dart';
+import '../../../../core/services/auth_services.dart';
 import '../widgets/auth_text_field.dart';
 
 class ForgotPasswordScreen extends ConsumerStatefulWidget {

@@ -17,7 +17,7 @@ class RecentTransactionsSection extends StatelessWidget {
         amount: 299.99,
         pointsEarned: 300,
         date: DateTime.now().subtract(const Duration(hours: 2)),
-        status: TransactionStatus.verified,
+        status: TransactionStatus.terverifikasi,
       ),
       RecentTransaction(
         id: '2',
@@ -25,7 +25,7 @@ class RecentTransactionsSection extends StatelessWidget {
         amount: 15.50,
         pointsEarned: 16,
         date: DateTime.now().subtract(const Duration(days: 1)),
-        status: TransactionStatus.verified,
+        status: TransactionStatus.terverifikasi,
       ),
       RecentTransaction(
         id: '3',
@@ -95,7 +95,7 @@ class _TransactionItem extends StatelessWidget {
     IconData statusIcon;
 
     switch (transaction.status) {
-      case TransactionStatus.verified:
+      case TransactionStatus.terverifikasi:
         statusColor = AppColors.success;
         statusText = 'Verified';
         statusIcon = Icons.check_circle;
@@ -105,7 +105,7 @@ class _TransactionItem extends StatelessWidget {
         statusText = 'Pending';
         statusIcon = Icons.access_time;
         break;
-      case TransactionStatus.cancelled:
+      case TransactionStatus.dibatalkan:
         statusColor = AppColors.error;
         statusText = 'Cancelled';
         statusIcon = Icons.cancel;

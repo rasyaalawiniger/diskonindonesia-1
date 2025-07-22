@@ -27,7 +27,7 @@ import '../../features/admin/presentation/screens/admin_dashboard_screen.dart';
 import '../../features/admin/presentation/screens/admin_users_screen.dart';
 import '../../features/admin/presentation/screens/admin_merchants_screen.dart';
 import '../../features/qr/presentation/screens/qr_scanner_screen.dart';
-import '../services/auth_service.dart';
+import '../services/auth_services.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   final authService = ref.watch(authServiceProvider);
