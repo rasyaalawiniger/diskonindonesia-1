@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 final notificationServiceProvider = Provider<NotificationService>((ref) {
   return NotificationService();
@@ -116,11 +117,10 @@ class NotificationService {
       id,
       title,
       body,
-      scheduledDate,
+      tz.TZDateTime.from(scheduledDate, tz.local),
       notificationDetails,
       payload: payload,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
   }
 

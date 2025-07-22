@@ -38,6 +38,7 @@ dependencies:
   uuid: ^4.5.1
   url_launcher: ^6.3.2
   fl_chart: ^0.69.0
+  timezone: ^0.10.1
 
 
 dev_dependencies:
