@@ -20,13 +20,28 @@
     
     <!-- Network state -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> d6a932b7853468b0894132a625c8ca3495c114bf
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
     <application
         android:label="diskonindonesia"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
+<<<<<<< HEAD
         
+=======
+<<<<<<< HEAD
+        
+=======
+>>>>>>> d6a932b7853468b0894132a625c8ca3495c114bf
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -52,6 +67,10 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
 
         <!-- Notification receiver -->
         <receiver
@@ -68,5 +87,21 @@
             </intent-filter>
         </receiver>
         
+<<<<<<< HEAD
+=======
+=======
+        
+        <!-- Notification receiver -->
+        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+>>>>>>> d6a932b7853468b0894132a625c8ca3495c114bf
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
     </application>
 </manifest>

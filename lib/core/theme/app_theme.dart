@@ -16,12 +16,10 @@ class AppTheme {
         primary: AppColors.primaryDark,
         secondary: AppColors.accent,
         surface: AppColors.white,
-        background: AppColors.primaryLight,
         error: AppColors.error,
         onPrimary: AppColors.white,
         onSecondary: AppColors.white,
         onSurface: AppColors.primaryDark,
-        onBackground: AppColors.primaryDark,
         onError: AppColors.white,
       ),
       
@@ -58,6 +56,10 @@ class AppTheme {
       ),
       
       // Card Theme
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
       // cardTheme: CardTheme(
       //   color: AppColors.white,
       //   elevation: AppSizes.cardElevation,
@@ -66,6 +68,19 @@ class AppTheme {
       //   ),
       //   margin: const EdgeInsets.all(AppSizes.sm),
       // ),
+<<<<<<< HEAD
+=======
+=======
+      cardTheme: CardThemeData(
+        color: AppColors.white,
+        elevation: AppSizes.cardElevation,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+        ),
+        margin: const EdgeInsets.all(AppSizes.sm),
+      ),
+>>>>>>> d6a932b7853468b0894132a625c8ca3495c114bf
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
       
       // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -249,12 +264,10 @@ class AppTheme {
         primary: AppColors.primaryLight,
         secondary: AppColors.accentLight,
         surface: Color(0xFF2C3238),
-        background: AppColors.primaryDark,
         error: AppColors.error,
         onPrimary: AppColors.primaryDark,
         onSecondary: AppColors.primaryDark,
         onSurface: AppColors.primaryLight,
-        onBackground: AppColors.primaryLight,
         onError: AppColors.white,
       ),
       
@@ -290,9 +303,21 @@ class AppTheme {
         ),
       ),
       
+<<<<<<< HEAD
       // Card Theme - FIXED: Changed from CardTheme to CardThemeData
       cardTheme: const CardThemeData(
         color: Color(0xFF2C3238),
+=======
+<<<<<<< HEAD
+      // Card Theme - FIXED: Changed from CardTheme to CardThemeData
+      cardTheme: const CardThemeData(
+        color: Color(0xFF2C3238),
+=======
+      // Card Theme
+      cardTheme: CardThemeData(
+        color: const Color(0xFF2C3238),
+>>>>>>> d6a932b7853468b0894132a625c8ca3495c114bf
+>>>>>>> 0a07f7cbce451fdc5020c63d3e9972a78cc3916c
         elevation: AppSizes.cardElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(AppSizes.radiusMd)),
