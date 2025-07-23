@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'dart:typed_data';
 
 final supabaseServiceProvider = Provider<SupabaseService>((ref) {
   return SupabaseService();
@@ -20,20 +21,20 @@ class SupabaseService {
     int? limit,
   }) async {
     try {
-      var query = _client.from(table).select(select ?? '*');
+      PostgrestFilterBuilder query = _client.from(table).select(select ?? '*');
       
       if (filters != null) {
         filters.forEach((key, value) {
-          query = query.eq(key, value);
+          query = query.eq(key, value) as PostgrestFilterBuilder;
         });
       }
       
       if (orderBy != null) {
-        query = query.order(orderBy, ascending: ascending);
+        query = query.order(orderBy, ascending: ascending) as PostgrestFilterBuilder;
       }
       
       if (limit != null) {
-        query = query.limit(limit);
+        query = query.limit(limit) as PostgrestFilterBuilder;
       }
       
       final response = await query;
@@ -49,10 +50,10 @@ class SupabaseService {
     required Map<String, dynamic> filters,
   }) async {
     try {
-      var query = _client.from(table).select(select ?? '*');
+      PostgrestFilterBuilder query = _client.from(table).select(select ?? '*');
       
       filters.forEach((key, value) {
-        query = query.eq(key, value);
+        query = query.eq(key, value) as PostgrestFilterBuilder;
       });
       
       final response = await query.single();
@@ -84,10 +85,10 @@ class SupabaseService {
     Map<String, dynamic> filters,
   ) async {
     try {
-      var query = _client.from(table).update(data);
+      PostgrestFilterBuilder query = _client.from(table).update(data);
       
       filters.forEach((key, value) {
-        query = query.eq(key, value);
+        query = query.eq(key, value) as PostgrestFilterBuilder;
       });
       
       final response = await query.select().single();
@@ -102,10 +103,10 @@ class SupabaseService {
     Map<String, dynamic> filters,
   ) async {
     try {
-      var query = _client.from(table).delete();
+      PostgrestFilterBuilder query = _client.from(table).delete();
       
       filters.forEach((key, value) {
-        query = query.eq(key, value);
+        query = query.eq(key, value) as PostgrestFilterBuilder;
       });
       
       await query;
@@ -130,12 +131,6 @@ class SupabaseService {
       callback: callback,
     );
     
-    if (filters != null) {
-      filters.forEach((key, value) {
-        subscription = subscription.filter(key, 'eq', value);
-      });
-    }
-    
     channel.subscribe();
     return channel;
   }
@@ -148,7 +143,7 @@ class SupabaseService {
   Future<String> uploadFile(
     String bucket,
     String path,
-    List<int> fileBytes, {
+    Uint8List fileBytes, {
     Map<String, String>? metadata,
   }) async {
     try {

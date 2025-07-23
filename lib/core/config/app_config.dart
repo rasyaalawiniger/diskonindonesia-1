@@ -3,11 +3,11 @@ class AppConfig {
   static const String appVersion = '1.0.0';
   
   // Supabase Configuration
-  static const String supabaseUrl = 'YOUR_SUPABASE_URL';
-  static const String supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+  static const String supabaseUrl = 'https://kxzcxxbzlxfeqxkybrfx.supabase.co';
+  static const String supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4emN4eGJ6bHhmZXF4a3licmZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwNzg1NTQsImV4cCI6MjA2ODY1NDU1NH0.YMJCI8jXn6G7L3t-xuRs8KvSl1wjXFTR8uNLr84E5DU';
   
   // API Endpoints
-  static const String baseApiUrl = 'YOUR_SUPABASE_URL/rest/v1';
+  static const String baseApiUrl = 'https://kxzcxxbzlxfeqxkybrfx.supabase.co/rest/v1';
   
   // App Settings
   static const int pointsPerDollar = 1;
