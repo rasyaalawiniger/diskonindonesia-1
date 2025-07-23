@@ -1,9 +1,10 @@
+import 'package:diskonindonesia/core/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/utils/constants.dart';
-import '../../../../core/services/auth_service.dart';
+import '../../../../core/services/auth_services.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   final Widget child;
@@ -108,25 +109,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
           elevation: 0,
         ),
       ),
-      floatingActionButton: user?.role == UserRole.merchant
-          ? FloatingActionButton(
-              onPressed: () => context.push('/merchant-dashboard'),
-              backgroundColor: AppColors.accent,
-              child: const Icon(
-                Icons.store,
-                color: AppColors.white,
-              ),
-            )
-          : user?.role == UserRole.admin
-              ? FloatingActionButton(
-                  onPressed: () => context.push('/admin-dashboard'),
-                  backgroundColor: AppColors.warning,
-                  child: const Icon(
-                    Icons.admin_panel_settings,
-                    color: AppColors.white,
-                  ),
-                )
-              : null,
     );
   }
 }

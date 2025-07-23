@@ -1,3 +1,5 @@
+import 'package:diskonindonesia/core/services/auth_service.dart';
+import 'package:diskonindonesia/features/admin/presentation/screens/main_dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -23,11 +25,10 @@ import '../../features/gamification/presentation/screens/referral_screen.dart';
 import '../../features/merchant/presentation/screens/merchant_dashboard_screen.dart';
 import '../../features/merchant/presentation/screens/merchant_offers_screen.dart';
 import '../../features/merchant/presentation/screens/merchant_analytics_screen.dart';
-import '../../features/admin/presentation/screens/admin_dashboard_screen.dart';
 import '../../features/admin/presentation/screens/admin_users_screen.dart';
 import '../../features/admin/presentation/screens/admin_merchants_screen.dart';
 import '../../features/qr/presentation/screens/qr_scanner_screen.dart';
-import '../services/auth_service.dart';
+import '../services/auth_services.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   final authService = ref.watch(authServiceProvider);

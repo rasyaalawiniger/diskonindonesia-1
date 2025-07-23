@@ -58,14 +58,14 @@ class AppTheme {
       ),
       
       // Card Theme
-      cardTheme: CardTheme(
-        color: AppColors.white,
-        elevation: AppSizes.cardElevation,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.radiusMd),
-        ),
-        margin: const EdgeInsets.all(AppSizes.sm),
-      ),
+      // cardTheme: CardTheme(
+      //   color: AppColors.white,
+      //   elevation: AppSizes.cardElevation,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+      //   ),
+      //   margin: const EdgeInsets.all(AppSizes.sm),
+      // ),
       
       // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -290,14 +290,14 @@ class AppTheme {
         ),
       ),
       
-      // Card Theme
-      cardTheme: CardTheme(
-        color: const Color(0xFF2C3238),
+      // Card Theme - FIXED: Changed from CardTheme to CardThemeData
+      cardTheme: const CardThemeData(
+        color: Color(0xFF2C3238),
         elevation: AppSizes.cardElevation,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+          borderRadius: BorderRadius.all(Radius.circular(AppSizes.radiusMd)),
         ),
-        margin: const EdgeInsets.all(AppSizes.sm),
+        margin: EdgeInsets.all(AppSizes.sm),
       ),
       
       // Elevated Button Theme
